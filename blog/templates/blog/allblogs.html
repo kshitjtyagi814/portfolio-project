@@ -60,18 +60,22 @@
     <h2 class="text-left pt-3">Latest Posts</h2>
     <hr />
     </div>
-    </section>
+  </section>
+  <div class="container">
+    <div class="row">
           {% for blog in blog.all %}
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
               <h5>{{blog.pub_date_pretty}}</h5>
-            <img class="card-img-top" src="{{blog.image.url}}">
+            <img class="card-img-top" src="{{blog.image.url}}" height="200" width="200">
               <div class="card-body">
-                <h3><a href="{% url 'detail' blog.id %}"><p class="card-text">{{ blog.title }}</p></a></h3>
+                <h5><a href="{% url 'detail' blog.id %}"><p class="card-text text-dark">{{ blog.title }}</p></a></h5>
               </div>
             </div>
           </div>
           {% endfor %}
+     </div>
+   </div>
   </main>
 
   <footer class="text-muted">
